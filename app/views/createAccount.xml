@@ -1,0 +1,15 @@
+<Alloy>
+	<Window class="container" >
+		
+		<TextField id="userName" hintText="username" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="250" height="60" />
+		<TextField id="password" hintText="password" passwordMask="true" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="70" left="10" width="250" height="60" />
+		<TextField id="repeatpassword" hintText="repeeix password" passwordMask="true" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="130" left="10" width="250" height="60" />
+		<TextField id="email" hintText="email" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="190" left="10" width="250" height="60" />
+		<Label class="explicamapa" top="230" text="Mou el mapa fins a cercar el teu punt" ></Label>
+		<View  height="700" layout="horizontal" top="300"  id="mapView" ></View>
+		<Button id="mybut" top="150" width="Ti.UI.SIZE" onClick="createAccount.insertUser" />	
+		<Button id="closeCreateAccount" top="10" title="X" width="Ti.UI.SIZE" onClick="createAccount.close" />
+		
+	
+	</Window>
+</Alloy>

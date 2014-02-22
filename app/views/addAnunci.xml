@@ -1,0 +1,22 @@
+<Alloy>
+	<Window class="container" >
+		
+		<Label top="0" text="Afegeix un anunci" class="labelafegeix" ></Label>
+		
+		<TextField id="titol" hintText="Titol" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="250" height="60" />
+		<TextField id="descripcio" hintText="Descripció" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="70" left="10" width="250" height="60" />
+		<TextField id="preu" hintText="Preu" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="130" left="10" width="250" height="60" />
+		
+		
+		<Button id="saveAnunci" top="190" left="50" width="Ti.UI.SIZE" onClick="anunci.saveAnunciGetCity" />
+		<Button id="addFotoFromGaleria" left="150" top="190" layout="100" width="Ti.UI.SIZE" onClick="anunci.addFotoFromGalery" />
+		<Button id="addFotoFromCamera" left="270" top="190" layout="100" width="Ti.UI.SIZE" onClick="anunci.addFotoFromCamera" />
+		<Button id="closeCreateAnunci" top="190" left="380" title="X" width="Ti.UI.SIZE" onClick="anunci.close" />
+		
+		<View id="fotosView" top="300" height="150" width="Ti.UI.SIZE"  backgroundColor="#CCCCCC" layout="horizontal" ></View>
+		<Button id="changeGeoAnunci" top="420" left="380" title="Canvia put Geolocalitzacio" width="Ti.UI.SIZE" onClick="anunci.showGeo" />
+		<Label class="explicamapa" id="explicamapa" top="420" text="" ></Label>
+		<View  height="700" layout="horizontal" top="450"  id="mapViewAnunci" ></View>
+		
+	</Window>
+</Alloy>

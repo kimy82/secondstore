@@ -1,0 +1,97 @@
+<Alloy>
+	<Window class="container" >
+		<View id="menu">
+			<ScrollView id="scrollView">
+				<View id="info_user">
+						<Label>You not autentificath.</Label>
+				</View>
+				<View id="icons_comp">
+					<ImageView id="icone2"></ImageView>
+				</View>
+			</ScrollView>
+		</View>
+		<View id="content_anim">
+				<View id="distancia_text"><Label id="dis">Mostrant anuncis a: 3 Km</Label></View>
+				<View id="distancia">
+					<Button id="check"/>
+					<Slider id="slider_control"></Slider>
+				</View>
+			</View>
+		<View  height="10" layout="horizontal" top="0"  id="viewrefreshscrollview" >
+			<Button id="refreshscrollview" onClick="indexWindow.refreshAnuncis">
+			</Button>
+		</View>
+		<View  id="mainContainer">
+			<View id="main">
+				<View id="header">
+				<View id="int_header">
+						<ImageView id="logo"></ImageView>
+				</View>
+				<View id="int_header_slide">
+						<ImageView onClick="showhideslider" id="slid"></ImageView>
+				</View>
+			</View>
+				<TableView  id="mainList">
+					<TableViewRow id="listRow_One">
+						<View id="rowContainer_one">
+							<View id="todos">
+								<View id="foto_one">
+								</View>
+								<View id="totm">
+									<View id="con">
+										<Label id="productName_one">
+											TOTES LES CATEGORIES
+										</Label>
+										<Label id="description_one">
+											920 productes
+										</Label>
+										<Label id="userLabel" class="userLabel" onClick="indexWindow.changeUserData" >
+										</Label>
+									</View>
+								</View>
+							</View>
+						</View>
+					</TableViewRow>
+					
+				</TableView>
+			</View>
+			<View id="footer">
+				<View class="tbButton">
+					<ImageView id="icone" onClick="indexWindow.showhidemenu">
+					</ImageView>
+					<Label class="text_menu">
+						Menu
+					</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone1">
+					</ImageView>
+					<Label class="text_menu">
+						Conta
+					</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone2">
+					</ImageView>
+					<Label class="text_menu">
+						Chat
+					</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone3" >
+					</ImageView>
+					<Label class="text_menu">
+						Vendre
+					</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone4" >
+					</ImageView>
+					<Label class="text_menu">
+						Cerca
+					</Label>
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

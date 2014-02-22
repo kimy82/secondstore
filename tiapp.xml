@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.alexmany.secondstore</id>
+    <name>secondstore</name>
+    <version>1.0</version>
+    <publisher>kim</publisher>
+    <url>http://www.alexmany.com</url>
+    <description>not specified</description>
+    <copyright>2014 by kim</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>2245bbff-6f3a-4e09-9a70-bac1ed7c17ba</guid>
+    <property name="ti.ui.defaultunit" type="string">system</property>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+     <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
+            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+            <permission
+                android:name="com.alexmany.secondstore.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+            <uses-permission android:name="com.alexmany.secondstore.permission.C2D_MESSAGE"/>
+            <application>
+                <receiver
+                    android:name="com.alexmany.gcm.AppStoreBroadCastReciever" android:permission="com.google.android.c2dm.permission.SEND">
+                    <intent-filter>
+                        <!-- Receives the actual messages. -->
+                        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                        <!-- Receives the registration id. -->
+                        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                        <category android:name="com.alexmany.secondstore"/>
+                    </intent-filter>
+                </receiver>
+                <service android:name="com.alexmany.gcm.GCMIntentService"/>
+            </application>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+     <modules>
+        <module platform="android" version="1.0">com.alexmany.gcm</module>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
+    </modules>
+    <deployment-targets>
+        <target device="iphone">false</target>
+        <target device="ipad">false</target>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="mobileweb">true</target>
+        <target device="tizen">false</target>
+    </deployment-targets>
+    <sdk-version>3.1.3.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+</ti:app>

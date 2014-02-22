@@ -1,0 +1,392 @@
+".container":{
+	backgroundColor:"white",
+	navBarHidden: true,
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT],
+},
+//view Menu
+"#menu":{
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#333333",
+	left: 0,
+	zIndex:'4',
+},
+//view wrapper conte el header i el footer
+"#main":{
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#eaeaea",
+	left: 0,
+	layout: "vertical"
+},
+
+//header conte top actions
+"#header":{
+	backgroundImage:"/header.png",
+	width: Ti.UI.FILL,
+	height: "50dp",
+	top: 0, 
+	right: 0, 
+	left: 0,
+	layout:"horitzontal",
+	zIndex:'19',
+	
+},
+"#mainContainer":{
+	zIndex:'20'
+}
+"#logo":{
+	image:"/logo.png",
+	width:'145dp',
+	left:'0dp',
+},
+"#int_header":{
+	width:'195dp',
+	left:'10dp',
+},
+"#int_header_slide":{
+	width:'50dp',
+	height:'50dp',
+	right:"0dp"
+},
+"#slid":{
+	image:"/local.png",
+	height:'30dp',
+	right:'10dp',
+},
+"#categories":{
+	color: "white",
+	font: {
+		fontSize : "15dp",
+		fontFamily: "RobotoCondensed-Bold",
+	},
+	
+},
+
+ 
+//fi header
+
+//inici taula
+"#mainList":{
+	backgroundColor: "#eaeaea",
+	separatorStyle: "NONE",
+	height: Ti.UI.SIZE,
+	top:0,
+	left:'10dp',
+	right:'10dp',
+	widht: Ti.UI.SIZE,
+	separatorColor: '#FFFFFFF',
+	showVerticalScrollIndicator: false,
+	objName: 'table',
+	zIndex:40
+	
+},
+//
+"#listRow":{
+	height: "107dp",
+	selectionStyle: "NONE",
+	className:"listRow",
+	showVerticalScrollIndicator: false,
+	 className: 'row',
+    objName: 'row',
+},
+"#rowContainer":{
+	height: "97dp",
+	width: Ti.UI.FILL,
+	top:'10dp',
+	layout: "horizontal",
+},
+"#listRow_one":{
+	height: "57dp",
+	selectionStyle: "NONE",
+	className:"listRow",
+	showVerticalScrollIndicator: false,
+	 className: 'row',
+    objName: 'row',
+},
+"#rowContainer_one":{
+	height: "47dp",
+	width: Ti.UI.FILL,
+	top:'10dp',
+	layout: "horizontal",
+},
+//view container que equilibra les diferent views interiors
+"#todos":{
+	width:Ti.UI.FILL,
+	left:0,
+	backgroundColor: "#ffffff",
+	HighlightedColor: '#333333',
+	
+},
+//View container foto
+"#foto":{
+	width:"97dp",
+	left:'0dp',
+},
+"#foto_one":{
+	width:"97dp",
+	left:'0dp',
+	backgroundColor:'#d9d9d9',
+}
+"#sold":{
+	top: '5dp',
+	right: '5dp',
+	height:Ti.UI.SIZE,
+	image:"/sold.png",
+	width:Ti.UI.SIZE,
+	zIndex:20
+},
+//foto de producte
+"#profilePic":{
+	 width:Ti.UI.FILL,
+	 height:Ti.UI.FILL,
+	 image:"/1.jpg",
+	 
+},
+"#profilePic2":{
+	  width:Ti.UI.FILL,
+	 height:Ti.UI.FILL,
+	 image:"/2.jpg",
+	 
+},
+"#profilePic3":{
+	 width:Ti.UI.FILL,
+	 height:Ti.UI.FILL,
+	 image:"/3.jpg",
+},
+"#profilePic4":{
+	width:Ti.UI.FILL,
+	 height:Ti.UI.FILL,
+	 image:"/4.jpg",
+},
+//View container
+"#totm":{
+	width:Ti.UI.FILL,
+	left:"97dp",
+},
+"#con":{
+	left:0,
+	width:"99%",
+	
+},
+//container textes
+"#container_textes":{
+	left:0,
+	layout: "vertical",
+	height: "97dp",
+	height: Ti.UI.SIZE,
+},
+"#productName_one":{
+	top: '5dp',
+	left: '10dp',
+	color: "#7f7f7f",
+	font: {fontSize: "18dp", fontFamily: "RobotoCondensed-Bold"}
+},
+//Descripcio del producte
+"#description_one":{
+	top: '25dp',
+	left: '10dp' ,
+	color: "#7f7f7f",
+	font: {
+		fontSize : "14dp",
+		fontFamily: "Roboto-Light",
+	},
+},
+//Nom del producte
+"#productName":{
+	top: 5,
+	left: 10,
+	color: "#444444",
+	font: {fontSize: "16dp", fontFamily: "Roboto-Light"}
+},
+//Descripcio del producte
+"#description":{
+	top: 33,
+	left: 10 ,
+	color: "#7f7f7f",
+	font: {
+		fontSize : "14dp",
+		fontFamily: "Roboto-Light",
+	},
+},
+//Preu del producte
+"#price":{
+	bottom: 5,
+	right: 10,
+	color: "#007aff",
+	font: {fontSize: "15dp", fontFamily: "RobotoCondensed-Bold"}
+},
+//Situació del producte
+"#situacion":{
+	bottom: 5,
+	left: 10,
+	color: "#b4b4b5",
+	font: {fontSize: "14dp", fontFamily: "Roboto-Light"}
+},
+//Si es nou, normal o porta molt de temps
+"#news":{
+	width:"1%",
+	right:0,
+	backgroundColor:"#4cd964",
+},
+//footer container
+"#footer":{
+	width: Ti.UI.FILL,
+	height: "50dp",
+	backgroundImage:"/back_footer.png",
+	bottom: 0, 
+	layout: "horizontal"
+},
+".text_menu":{
+	color: "#444444",
+	bottom:'5dp',
+	font: {fontSize: "9dp", fontFamily: "Roboto-Light"}
+}
+//View container, organitza en espai horitzontal
+".tbButton":{
+	width: "20%",
+},
+"#icone":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/menu.png"
+},
+"#icone1":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/user.png"
+},
+"#icone2":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/chat.png"
+},
+"#icone3":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/upload.png"
+},
+"#icone4":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/cerca.png"
+},
+"#sep":{
+	width: 1,
+	image: "/sep.png",
+	height: Ti.UI.FILL,
+},
+"#productNamea":{
+	top: 5,
+	left: 10,
+	color: "#333333",
+	height: Ti.UI.SIZE,
+	font: {fontSize: "16dp", fontFamily: "RobotoCondensed-Bold"}
+},
+"#descriptiona":{
+	top: 5,
+	left: 10 ,
+	color: "#8e8e93",
+	height: Ti.UI.SIZE,
+	font: {
+		fontSize : "14dp",
+		fontFamily: "Roboto-Light",
+	},
+},
+"#pricea":{
+	bottom: 5,
+	left: 10,
+	color: "#007aff",
+	height: Ti.UI.SIZE,
+	font: {fontSize: "15dp", fontFamily: "RobotoCondensed-Bold"}
+},
+"#situaciona":{
+	bottom: 5,
+	left: 10,
+	color: "#8e8e93",
+	height: Ti.UI.SIZE,
+	font: {fontSize: "14dp", fontFamily: "Roboto-Light"}
+},
+
+"#trure":{
+	left:0,
+	color: "#8e8e93",
+	font: {
+		fontSize : "14dp",
+		fontFamily: "Roboto-Light",
+	},
+},
+"#last":{
+	height: "40dp",
+	selectionStyle: "NONE",
+	className:"listRow"
+},
+"#rowContainerTwo":{
+	height: "40dp",
+	width: Ti.UI.FILL,
+	backgroundColor: "#fff",
+	layout: "horizontal"
+},
+"#con_footer":{
+	height: "40dp",
+	width: Ti.UI.FILL,
+	layout: "horizontal"
+},
+"#grayLine":{
+	height: "1dp",
+	width: Ti.UI.FILL,
+	layout: "horizontal",
+	backgroundColor:'#bcbcbc',
+	top:'106dp',
+},
+//ultima row, perque no quedi tapada la ultima entrada
+"#listRowTwo":{
+	height: "40dp",
+	selectionStyle: "NONE",
+	className:"listRow"
+},
+"#distancia_text":{
+	width: Ti.UI.FILL,
+	zIndex:'10',
+	height:'30dp',
+	backgroundColor:"#eaa213",
+	top:'0dp'
+},
+"#check":{
+	backgroundImage:"/check.png",
+	backgroundSelectedImage:"/check_sel.png",
+	width:'60dp',
+	height:'60dp',
+	left:'0dp'
+},
+"#distancia":{
+	width: Ti.UI.FILL,
+	height:'60dp',
+	backgroundColor:"#333333",
+	top:'30dp'
+},
+"#dis":{
+	color: "#ffffff",
+	font: {fontSize: "14dp", fontFamily: "Roboto-Light"}
+},
+"#content_anim":{
+	zIndex:'5',
+	height:'90dp',
+	width: Ti.UI.FILL,
+	top:'0dp',
+},
+"#slider_control":{
+		min:0,
+		max:100,
+		value:0,
+		width:'230dp',
+		height:'auto',
+		right:'10dp'
+},
+"#scrollView": {
+	layout:"vertical",
+	width:Ti.UI.FILL,
+	height:Ti.UI.FILL,
+	showVerticalScrollIndicator: true,
+	scrollType: "vertical"
+}

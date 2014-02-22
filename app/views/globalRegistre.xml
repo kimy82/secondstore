@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container" >
+	    <View  height="10" layout="vertical" top="0"  id="buttonsregistre" >
+           
+        </View>
+	</Window>
+</Alloy>

@@ -1,0 +1,8 @@
+<Alloy>
+	<Window class="container">
+		<Label id="noNetwork" >ERROR NO HI HA NET</Label>
+		
+		<Button id="retry" top="150" width="Ti.UI.SIZE" onClick="noIternet.retry" />
+		<ProgressBar id="pb" top="10" width="250" height="auto" min="0" max="10" value="0" color="#fff" message="Loading ..." />
+	</Window>
+</Alloy>
