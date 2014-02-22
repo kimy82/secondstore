@@ -17,6 +17,7 @@
     <analytics>true</analytics>
     <guid>2245bbff-6f3a-4e09-9a70-bac1ed7c17ba</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
+    <property name="ti.facebook.appid">1424716701093081</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
