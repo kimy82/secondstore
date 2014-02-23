@@ -365,7 +365,7 @@
 	backgroundColor:"#333333",
 	top:'30dp'
 },
-"#dis":{
+"#dis_km":{
 	color: "#ffffff",
 	font: {fontSize: "14dp", fontFamily: "Roboto-Light"}
 },
