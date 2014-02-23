@@ -28,7 +28,7 @@
 						<ImageView id="logo"></ImageView>
 				</View>
 				<View id="int_header_slide">
-						<ImageView onClick="showhideslider" id="slid"></ImageView>
+						<ImageView onClick="indexWindow.showhideslider" id="slid"></ImageView>
 				</View>
 			</View>
 				<TableView  id="mainList">
