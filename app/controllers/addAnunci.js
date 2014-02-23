@@ -2,6 +2,9 @@ var args = arguments[0] || {};
 var parent = args.parent;
 var map = args.map;
 
+Ti.include("/js/TiLoading.js");
+TiLoad.init({ rotate: false });
+
 var anunci = {
     _init : function(ip) {
         anunci.id = 'null';
@@ -87,6 +90,7 @@ var anunci = {
                     if ("ok" == jdata.ok) {
                         anunci.setAnunciId(jdata.id);
                     }
+                    TiLoad.hide();
                 };
                 xhr.onsendstream = function(e) {
 
@@ -100,6 +104,7 @@ var anunci = {
                 xhr.send({
                     file : image
                 });
+                TiLoad.show();
                 var imageView = anunci.createImageView(event);
                 $.fotosView.add(imageView);
             },
