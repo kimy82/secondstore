@@ -19,14 +19,12 @@ var createAccount = {
 			if($.repeatpassword.value == $.password.value){
 				server.insertUser( $.userName.value, $.password.value,$.email.value, geo.latitude,geo.longitude);
 				principal.setUser($.userName.value);
-				parent.viewbuttons.remove(button);		
-				$.createAccount.close();	
+				$.createAccount.close();
 			}else{
 				createAccount.showMessage("Els passwords no són iguals","KO","password");
-			}	
-		}		
-		
-	},	
+			}
+		}
+	},
 	showMessage: function(message,ok,title){
 		Ti.UI.createAlertDialog({
 			message : message,

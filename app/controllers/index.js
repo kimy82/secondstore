@@ -2,6 +2,7 @@ Ti.include("/js/md5.js");
 Ti.include("/js/principal.js");
 Ti.include("/js/server.js");
 server._init("www.alexmanydev.com/AppStore");
+//server._init("192.168.1.65:8080/AppStore");
 
 $.content_anim.setVisible(false);
 
@@ -74,38 +75,38 @@ var indexWindow = {
         win.open();
     },
     getAnuncis : function() {
- 
-         Titanium.Geolocation.getCurrentPosition(function(e) {
 
-                latitude = e.coords.latitude;
-                longitude = e.coords.longitude;
-                var url = "http://" + indexWindow.ip + "/rest/service/userService/getAnuncis?init=" + indexWindow.init+"&lat="+latitude+"&lon="+longitude;
-                var client = Ti.Network.createHTTPClient({
-                    // function called when the response data is available
-                    onload : function(e) {
-                        Titanium.API.info(this.responseText);
-                        var data = this.responseText;
-                        var jdata = JSON.parse(data);
-                        indexWindow.init = indexWindow.init + 20;
-                        indexWindow.createScrollView(jdata);
-                    },
-                    // function called when an error occurs, including a timeout
-                    onerror : function(e) {
-                        Ti.UI.createAlertDialog({
-                            message : 'Error recuperant Anuncis'+e,
-                            ok : 'KO',
-                            title : 'ERROR'
-                        }).show();
-                    },
-                    timeout : 10000 // in milliseconds
-                });
-                // Prepare the connection.
-                client.open("GET", url);
-                // Send the request.
-                client.send();
-      
+        Titanium.Geolocation.getCurrentPosition(function(e) {
+
+            latitude = e.coords.latitude;
+            longitude = e.coords.longitude;
+            var url = "http://" + indexWindow.ip + "/rest/service/userService/getAnuncis?init=" + indexWindow.init + "&lat=" + latitude + "&lon=" + longitude;
+            var client = Ti.Network.createHTTPClient({
+                // function called when the response data is available
+                onload : function(e) {
+                    Titanium.API.info(this.responseText);
+                    var data = this.responseText;
+                    var jdata = JSON.parse(data);
+                    indexWindow.init = indexWindow.init + 20;
+                    indexWindow.createScrollView(jdata);
+                },
+                // function called when an error occurs, including a timeout
+                onerror : function(e) {
+                    Ti.UI.createAlertDialog({
+                        message : 'Error recuperant Anuncis' + e,
+                        ok : 'KO',
+                        title : 'ERROR'
+                    }).show();
+                },
+                timeout : 10000 // in milliseconds
             });
-        
+            // Prepare the connection.
+            client.open("GET", url);
+            // Send the request.
+            client.send();
+
+        });
+
     },
     refreshAnuncis : function() {
         loading = true;
@@ -296,7 +297,7 @@ var indexWindow = {
             });
             var labeldescripcio = Ti.UI.createLabel({
                 top : 33,
-                text: principal.retallaString(json[intImage].descripcio),
+                text : principal.retallaString(json[intImage].descripcio),
                 left : 10,
                 color : "#8e8e93",
                 font : {
@@ -395,7 +396,7 @@ var indexWindow = {
                     Titanium.API.info(this.responseText);
                     var data = this.responseText;
                     var jdata = JSON.parse(data);
-    
+
                     indexWindow.initSearch = indexWindow.initSearch + jdata.length;
                     indexWindow.createScrollView(jdata);
                 },
@@ -413,7 +414,7 @@ var indexWindow = {
             client.open("GET", url);
             // Send the request.
             client.send();
-         });
+        });
     },
     getMapView : function() {
         return Titanium.Map.createView({
@@ -489,16 +490,16 @@ var indexWindow = {
         });
     },
     showhidemenu : function(e) {
-         if (!menuOpen) {
+        if (!menuOpen) {
             $.content_anim.setVisible(false);
-            
+
             moveTo = "250dp";
             menuOpen = true;
-            
+
         } else {
             moveTo = "0";
             menuOpen = false;
-            
+
         }
 
         // have to set the current width of the "main" view before moving it so it doesn't get squeezed
@@ -510,25 +511,17 @@ var indexWindow = {
             duration : 100
         });
 
-
     },
-};
-
-
-
-
-var content_animOpen = false;
-//ANIMACIÓ DEL SLIDER
-function showhideslider(e){
-    if (!content_animOpen) {
+    showhideslider : function(e) {
+        //ANIMACIÓ DEL SLIDER
+        if (!content_animOpen) {
             $.content_anim.setVisible(true);
             moveTo = "90dp";
             content_animOpen = true;
         } else {
             moveTo = "0";
-            content_animOpen = false;   
-           
-              
+            content_animOpen = false;
+
         }
 
         // have to set the current width of the "main" view before moving it so it doesn't get squeezed
@@ -539,7 +532,11 @@ function showhideslider(e){
             top : moveTo,
             duration : 100
         });
-}
+    },
+};
+
+var content_animOpen = false;
+
 
 server.setParent(indexWindow);
 //Params per la geolocalitzacio
@@ -558,14 +555,12 @@ Titanium.Geolocation.addEventListener('location', function() {
 
 //Inicialitzem el server i el controlador de la pantalla
 indexWindow._init("www.alexmanydev.com/AppStore");
+//indexWindow._init("192.168.1.65:8080/AppStore");
 //Accions amb la base de dates
-utilsDB._init($, mapview,indexWindow);
-
-
+utilsDB._init($, mapview, indexWindow);
 
 //Si l'usuari esta logat posem boton per penjar anuncis i treiem els de registre
 utilsDB.configureIndex();
-
 
 //Boto hidden que s'utilitza per refrescar el llistat d'anuncis
 $.viewrefreshscrollview.hide();
@@ -594,8 +589,6 @@ indexWindow.getAnuncis();
 var isAndroid = Ti.Platform.osname === 'android';
 //Afegim listener a l'scroll per al final cargar mes anuncis
 
-
-
 var menuOpen = false;
 
 $.mainList.addEventListener('scroll', function(evt) {
@@ -619,7 +612,6 @@ $.mainList.addEventListener('scroll', function(evt) {
         }
     }
 });
-
 
 //PUSH NOTIFICATIONS OBJECT
 var gcm = require('com.alexmany.gcm');

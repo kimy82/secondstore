@@ -213,6 +213,7 @@ $.fotosView.add(scrollFotosAnunci);
 //fi scroll view
 
 anunci._init('www.alexmanydev.com/AppStore');
+//anunci._init('192.168.1.65:8080/AppStore');
 
 $.addAnunci.backgroundColor = "#CCCCCC";
 $.saveAnunci.setTitle('guarda');
