@@ -135,6 +135,7 @@ var anunci = {
                         if ("ok" == jdata.ok) {
                             anunci.setAnunciId(jdata.id);
                         }
+                        TiLoad.hide();
                     };
                     xhr.onsendstream = function(e) {
 
@@ -152,6 +153,7 @@ var anunci = {
                     xhr.send({
                         file : image
                     });
+                    TiLoad.show();
                     $.fotosView.add(imageView);
                 } else {
                     anunci.showMessage('Error', 'KO', "got the wrong type back =" + event.mediaType);
