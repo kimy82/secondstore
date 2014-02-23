@@ -26,7 +26,7 @@ var server = {
 					//Guarda user a la BD del device		
 					server.userID=	jdata.id;
 					controlDB.saveUser(jdata.id,userName, md5(password));
-					setTimeout(function(){utilsDB.addAnunciButton();},1000);
+					setTimeout(function(){utilsDB.configureIndex();},1000);
 					server.parent.registerDevice();
 					Ti.UI.createAlertDialog({
 						message : 'Registra\'t',

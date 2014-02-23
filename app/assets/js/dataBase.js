@@ -87,6 +87,7 @@ utilsDB = {
     configureIndex : function() {
         var userInDB = _executionsDB.getUser();
         if (userInDB.id != "") {
+            utilsDB.wind.icone3.removeEventListener('click',utilsDB.indexWindow.openCreateAccount);
             utilsDB.wind.icone3.addEventListener('click', function(e) {
                 var win = Alloy.createController('addAnunci', {
                     parent : utilsDB.wind,
@@ -95,17 +96,29 @@ utilsDB = {
                 win.open();
             });
         } else {
-            utilsDB.wind.icone3.addEventListener('click', function(e) {
-                utilsDB.indexWindow.openCreateAccount();
-            });
-            utilsDB.wind.icone1.addEventListener('click', function(e) {
-                utilsDB.indexWindow.openCreateAccount();
-            });
-            utilsDB.wind.icone2.addEventListener('click', function(e) {
-                utilsDB.indexWindow.openCreateAccount();
-            });
+            utilsDB.wind.icone3.addEventListener('click', 
+                utilsDB.indexWindow.openCreateAccount
+            );
+            utilsDB.wind.icone1.addEventListener('click', 
+                utilsDB.indexWindow.openCreateAccount
+            );
+            utilsDB.wind.icone2.addEventListener('click',
+                utilsDB.indexWindow.openCreateAccount
+            );
         }
     },
+    unRegisterAllEventListeners: function(obj) {
+            if ( typeof obj._eventListeners == 'undefined' || obj._eventListeners.length == 0 ) {
+                return; 
+            }
+            
+            for(var i = 0, len = obj._eventListeners.length; i < len; i++) {
+                var e = obj._eventListeners[i];
+                obj.removeEventListener(e.event, e.callback);
+            }
+         
+            obj._eventListeners = [];
+},
 };
 
 var geo = {
