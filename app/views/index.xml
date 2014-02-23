@@ -11,10 +11,10 @@
 			</ScrollView>
 		</View>
 		<View id="content_anim">
-				<View id="distancia_text"><Label id="dis">Mostrant anuncis a: 3 Km</Label></View>
+				<View id="distancia_text"><Label id="dis_km">Mostrant anuncis a: 3 Km</Label></View>
 				<View id="distancia">
-					<Button id="check"/>
-					<Slider id="slider_control"></Slider>
+					<Button id="check" onClick="indexWindow.searchAnuncis" ></Button>
+					<Slider id="slider_control"  min="0" max="100" value="3" onChange="indexWindow.updateDistance" ></Slider>
 				</View>
 			</View>
 		<View  height="10" layout="horizontal" top="0"  id="viewrefreshscrollview" >

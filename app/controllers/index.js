@@ -50,6 +50,7 @@ var indexWindow = {
         indexWindow.initSearch = 0;
         indexWindow.numAnuncis = 0;
         indexWindow.searching = false;
+        indexWindow.distancia=3;
         indexWindow._controlNetwork();
     },
     init : 0,
@@ -361,7 +362,7 @@ var indexWindow = {
 
             indexWindow.searching = true;
 
-            var url = "http://" + indexWindow.ip + "/rest/service/userService/searchAnuncis?init=" + indexWindow.initSearch + "&distance=" + $.distance.value + "&lat=" + latitude + "&lon=" + longitude;
+            var url = "http://" + indexWindow.ip + "/rest/service/userService/searchAnuncis?init=" + indexWindow.initSearch + "&distance=" + indexWindow.distancia + "&lat=" + latitude + "&lon=" + longitude;
             var client = Ti.Network.createHTTPClient({
                 // function called when the response data is available
                 onload : function(e) {
@@ -388,6 +389,11 @@ var indexWindow = {
             // Send the request.
             client.send();
         });
+    },
+    updateDistance : function(e){
+         var distancia = parseInt(e.value);
+         indexWindow.distancia = distancia;
+         $.dis_km.setText("Mostrant anuncis a: "+distancia+" Km");
     },
     getMapView : function() {
         return Titanium.Map.createView({
