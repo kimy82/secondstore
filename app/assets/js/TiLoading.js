@@ -71,6 +71,7 @@ var TiLoad = {
         }
         
         TiLoad.visible = false;
+        TiLoad.init({ rotate: false });
     },
     size: function(_event) {
         TiLoad.window.width = Titanium.Platform.displayCaps.platformWidth;

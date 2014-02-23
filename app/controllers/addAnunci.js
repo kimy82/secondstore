@@ -2,9 +2,6 @@ var args = arguments[0] || {};
 var parent = args.parent;
 var map = args.map;
 
-Ti.include("/js/TiLoading.js");
-TiLoad.init({ rotate: false });
-
 var anunci = {
     _init : function(ip) {
         anunci.id = 'null';
@@ -186,7 +183,7 @@ var anunci = {
     },
     getCity : function(lat, lon) {
         var addrUrl = "http://maps.googleapis.com/maps/api/geocode/json?sensor=true&latlng=" + lat + "," + lon;
-        /* web-service call */
+
         var addrReq = Titanium.Network.createHTTPClient();
         addrReq.open("GET", addrUrl);
         addrReq.send(null);

@@ -6,6 +6,10 @@ server._init("www.alexmanydev.com/AppStore");
 
 $.content_anim.setVisible(false);
 
+//Loading screen
+Ti.include("/js/TiLoading.js");
+TiLoad.init({ rotate: false });
+
 //Butoon de registre
 var buttonRegistre = Titanium.UI.createButton({
     title : 'Registra \'t',
@@ -75,20 +79,20 @@ var indexWindow = {
         win.open();
     },
     getAnuncis : function() {
-
+        TiLoad.show();
         Titanium.Geolocation.getCurrentPosition(function(e) {
-
+            
             latitude = e.coords.latitude;
             longitude = e.coords.longitude;
             var url = "http://" + indexWindow.ip + "/rest/service/userService/getAnuncis?init=" + indexWindow.init + "&lat=" + latitude + "&lon=" + longitude;
             var client = Ti.Network.createHTTPClient({
                 // function called when the response data is available
                 onload : function(e) {
-                    Titanium.API.info(this.responseText);
                     var data = this.responseText;
                     var jdata = JSON.parse(data);
                     indexWindow.init = indexWindow.init + 20;
                     indexWindow.createScrollView(jdata);
+                    TiLoad.hide();
                 },
                 // function called when an error occurs, including a timeout
                 onerror : function(e) {
@@ -113,31 +117,21 @@ var indexWindow = {
         indexWindow.initSearch = 0;
         indexWindow.searching = false;
         indexWindow.init = 0;
-        indexWindow._emptyTableAddLoading();
+        indexWindow._emptyTable();
         indexWindow.getAnuncis();
     },
     searchAnuncis : function() {
         loading = true;
         indexWindow.initSearch = 0;
         indexWindow.searching = true;
-        indexWindow._emptyTableAddLoading();
+        indexWindow._emptyTable();
         indexWindow.getSearchAnuncis();
     },
-    _emptyTableAddLoading : function() {
+    _emptyTable : function() {
         var rows = [];
-        rows.push(rowLoading);
         $.mainList.setData(rows);
-        indexWindow.numAnuncis = 1;
+        indexWindow.numAnuncis = 0;
         loading = true;
-    },
-    _removeLoading : function() {
-        if (indexWindow.numAnuncis == 0) {
-            $.mainList.deleteRow(0);
-            indexWindow.numAnuncis = 0;
-        } else {
-            $.mainList.deleteRow(indexWindow.numAnuncis - 1);
-            indexWindow.numAnuncis--;
-        }
     },
     _removeLastRow : function() {
         if (indexWindow.numAnuncis != 0) {
@@ -146,7 +140,6 @@ var indexWindow = {
         }
     },
     _setLastRow : function() {
-
         var row = Ti.UI.createTableViewRow({
             id : "listRowTwo",
             height : "60dp",
@@ -207,13 +200,7 @@ var indexWindow = {
 
         var intImage = 0, intImages = json.length;
 
-        if (loading) {
-            indexWindow._removeLoading();
-        }
-
         indexWindow._removeLastRow();
-
-        //indexWindow._setFirstRow();
 
         for ( intImage = 0; intImage < intImages; intImage = intImage + 1) {
             //Crea elements i els hi donem estil
@@ -355,21 +342,6 @@ var indexWindow = {
             loading = false;
         }, 1000);
     },
-    initLabelLoading : function() {
-        return Ti.UI.createLabel({
-            text : "LOADING..................................",
-        });
-    },
-    initImageLoading : function() {
-
-        return Ti.UI.createImageView({
-            height : 96,
-            image : "/images/loading.gif",
-            left : 8,
-            top : 8,
-            width : 500
-        });
-    },
     changeUserData : function() {
         var win = Alloy.createController('changeUserData').getView();
         win.open();
@@ -381,7 +353,7 @@ var indexWindow = {
         activity.finish();
     },
     getSearchAnuncis : function() {
-
+        TiLoad.show();
         Titanium.Geolocation.getCurrentPosition(function(e) {
 
             latitude = e.coords.latitude;
@@ -399,6 +371,7 @@ var indexWindow = {
 
                     indexWindow.initSearch = indexWindow.initSearch + jdata.length;
                     indexWindow.createScrollView(jdata);
+                    TiLoad.hide();
                 },
                 // function called when an error occurs, including a timeout
                 onerror : function(e) {
@@ -569,20 +542,6 @@ $.viewrefreshscrollview.hide();
 //inidica si esta carrregant imatges
 var loading = false;
 
-var labelLoading = indexWindow.initLabelLoading();
-
-var imgLoading = indexWindow.initImageLoading();
-
-var rowLoading = Ti.UI.createTableViewRow({
-    id : 'listRow',
-    class : 'listRow',
-    height : "107dp",
-    selectionStyle : "NONE",
-});
-
-rowLoading.add(labelLoading);
-rowLoading.add(imgLoading);
-
 //carreguem anunicis a l'scroll view
 indexWindow.getAnuncis();
 
@@ -601,9 +560,6 @@ $.mainList.addEventListener('scroll', function(evt) {
         // tell our interval (above) to load more rows
 
         loading = true;
-
-        $.mainList.appendRow(rowLoading);
-        indexWindow.numAnuncis++;
 
         if (indexWindow.searching == true) {
             indexWindow.getSearchAnuncis();
