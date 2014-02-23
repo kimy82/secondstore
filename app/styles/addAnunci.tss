@@ -1,3 +1,8 @@
+".container":{
+	backgroundColor:"white",
+	navBarHidden: true,
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT],
+},
 ".labelafegeix": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
