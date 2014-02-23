@@ -1,0 +1,103 @@
+"Window":{
+	navBarHidden: true,
+	height:Ti.UI.FILL,
+}
+"#scrollView": {
+	backgroundColor:'#80cfe8',
+	layout:"vertical",
+	navBarHidden: true,
+	width:Ti.UI.FILL,
+	height:Ti.UI.FILL,
+	showVerticalScrollIndicator:true,
+},
+"#cos":{
+	top:'0dp',
+    left:'0dp',
+    width:Ti.UI.FILL,
+    height:Ti.UI.FILL,
+    layout:'vertical'
+}
+".container":{
+	top:'10dp',
+    left:'0dp',
+    width:Ti.UI.FILL,
+    height:'52dp'
+},
+".containerSep":{
+	top:'10dp',
+    left:'0dp',
+    width:Ti.UI.FILL,
+    height:'20dp'
+},
+".containerLogo":{
+	top:'20dp',
+    left:'0dp',
+    width:Ti.UI.FILL,
+   height:'55dp'
+},
+"#logo":{
+	image:"/logo.png",
+	 width:'165dp',
+	top:'10dp',
+},
+"#sepReg":{
+	width: Ti.UI.FILL,
+	image:"/sepReg.jpg",
+	height:'2dp',
+	layout: "horizontal"
+}
+"#button":{
+	backgroundImage:"/bacBut.jpg",
+	borderWidth:1,
+	borderColor:'#333',
+	color : '#ffffff',
+	backgroundSelectedImage:"/bacButSel.jpg",
+	font : {
+        fontFamily: "Roboto-Light",
+        fontSize : '14sp',
+    },
+    width:'165dp',
+    height:'50dp'
+},
+"#buttonNew":{
+	backgroundImage:"/bacButSel.jpg",
+	borderWidth:1,
+	borderColor:'#26b4e8',
+	color : '#ffffff',
+	backgroundSelectedImage:"/bacBut.jpg",
+	font : {
+        fontFamily: "Roboto-Light",
+        fontSize : '14sp',
+    },
+   width:'165dp',
+    height:'50dp'
+},
+"#face":{
+	backgroundImage:"/face.jpg",
+	borderWidth:1,
+	borderColor:'#37547f',
+	color : '#ffffff',
+	backgroundSelectedImage:"/bacButSel.jpg",
+	textAlign: 'right',
+	font : {
+        fontFamily: "Roboto-Light",
+        fontSize : '14sp',
+    },
+    width:'165dp',
+    height:'50dp'
+},
+"#textField2":{
+	borderRadius : '0sp',
+    borderWidth : '1px',
+    borderColor : '#bfebe8',
+	backgroundImage:"/field.jpg",
+	color : '#333333',
+    font : {
+        fontFamily: "Roboto-Light",
+        fontSize : '14sp',
+    },
+    layout : 'vertical',
+    focusedColor:'#288999',
+    width:'165dp',
+    height:'50dp'
+}
