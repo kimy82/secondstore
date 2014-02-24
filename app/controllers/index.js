@@ -10,19 +10,6 @@ $.content_anim.setVisible(false);
 Ti.include("/js/TiLoading.js");
 TiLoad.init({ rotate: false });
 
-//Butoon de registre
-var buttonRegistre = Titanium.UI.createButton({
-    title : 'Registra \'t',
-    top : 10,
-    width : Ti.UI.SIZE,
-    height : 50,
-    id : 'buttonRegistre'
-});
-
-buttonRegistre.addEventListener('click', function(e) {
-    indexWindow.openCreateAccount();
-});
-
 //Butoon de logout
 var buttonLogout = Titanium.UI.createButton({
     title : 'Log out',
@@ -51,12 +38,12 @@ var indexWindow = {
         indexWindow.numAnuncis = 0;
         indexWindow.searching = false;
         indexWindow.distancia=3;
-        indexWindow._controlNetwork();
+        indexWindow._controlNetwork('true');
     },
     init : 0,
-    _controlNetwork : function() {
+    _controlNetwork : function(check) {
         //Si hi ha internet carreguem la pantall i si no carreguem una pantalla d'avis'
-        if (isNetwork()) {
+        if (check=='true' && isNetwork()) {
             $.index.open();
         } else {
             var win = Alloy.createController('noInternet').getView();
@@ -82,9 +69,13 @@ var indexWindow = {
     getAnuncis : function() {
         TiLoad.show();
         Titanium.Geolocation.getCurrentPosition(function(e) {
-            
-            latitude = e.coords.latitude;
-            longitude = e.coords.longitude;
+            if(!e.success){
+                
+            }else{
+                latitude = e.coords.latitude;
+                longitude = e.coords.longitude;
+                
+            }
             var url = "http://" + indexWindow.ip + "/rest/service/userService/getAnuncis?init=" + indexWindow.init + "&lat=" + latitude + "&lon=" + longitude;
             var client = Ti.Network.createHTTPClient({
                 // function called when the response data is available
@@ -97,11 +88,8 @@ var indexWindow = {
                 },
                 // function called when an error occurs, including a timeout
                 onerror : function(e) {
-                    Ti.UI.createAlertDialog({
-                        message : 'Error recuperant Anuncis' + e,
-                        ok : 'KO',
-                        title : 'ERROR'
-                    }).show();
+                    TiLoad.hide();
+                    indexWindow._controlNetwork('false');
                 },
                 timeout : 10000 // in milliseconds
             });

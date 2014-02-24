@@ -2,32 +2,32 @@
     <Window>
         <ScrollView id="scrollView" showVerticalScrollIndicator="true">
             <View id="view">
-            	<View id="cos">
-            		<View class="containerLogo">
-	            	 	<ImageView id="logo"></ImageView>
-	 				</View> 
-	            	<View class="container">
-	            	 	<TextField hintText="USUARI" id="textField2"/>
-	 				</View>   
-	 				<View class="container">
-	            	 	<TextField passwordMask="true" hintText="PASSWORD" id="textField2"/>
-	 				</View>
-	 				<View class="container">
-	            	 	<Button id="button" onClick="detail" title="LOGIN"/>
-	 				</View>
-	 				<View class="containerSep">
-	            	 	<ImageView id="sepReg"></ImageView>
-	 				</View>
-	 				<View class="container">
-	            	 	<Button id="face"  title="FACEBOOK LOGIN"/>
-	 				</View>
-	 				<View class="containerSep">
-	            	 	<ImageView id="sepReg"></ImageView>
-	 				</View>
-	 				<View class="container">
-	            	 	<Button id="buttonNew"  title="CREAR COMPTE"/>
-	 				</View>
- 				</View>           
+                <View id="cos">
+                    <View class="containerLogo">
+                        <ImageView id="logo"></ImageView>
+                    </View>
+                    <View class="container">
+                        <TextField hintText="USUARI" id="textField2"/>
+                    </View>
+                    <View class="container">
+                        <TextField passwordMask="true" hintText="PASSWORD" id="textField2"/>
+                    </View>
+                    <View class="container">
+                        <Button id="button" title="LOGIN"/>
+                    </View>
+                    <View class="containerSep">
+                        <ImageView id="sepReg"></ImageView>
+                    </View>
+                    <View class="container" id="faceview">
+                        <Button id="face"  title="FACEBOOK LOGIN"/>
+                    </View>
+                    <View class="containerSep">
+                        <ImageView id="sepReg"></ImageView>
+                    </View>
+                    <View class="container">
+                        <Button id="buttonNew"  title="CREAR COMPTE"/>
+                    </View>
+                </View>
             </View>
         </ScrollView>
     </Window>

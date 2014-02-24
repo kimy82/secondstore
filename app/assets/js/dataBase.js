@@ -87,7 +87,7 @@ utilsDB = {
     configureIndex : function() {
         var userInDB = _executionsDB.getUser();
         if (userInDB.id != "") {
-            utilsDB.wind.icone3.removeEventListener('click',utilsDB.indexWindow.openCreateAccount);
+            utilsDB.wind.icone3.removeEventListener('click',utilsDB.indexWindow.openGlobalRegistre);
             utilsDB.wind.icone3.addEventListener('click', function(e) {
                 var win = Alloy.createController('addAnunci', {
                     parent : utilsDB.wind,
@@ -97,7 +97,7 @@ utilsDB = {
             });
         } else {
             utilsDB.wind.icone3.addEventListener('click', 
-                utilsDB.indexWindow.openCreateAccount
+                utilsDB.indexWindow.openGlobalRegistre
             );
             utilsDB.wind.icone1.addEventListener('click', 
                 utilsDB.indexWindow.openCreateAccount
