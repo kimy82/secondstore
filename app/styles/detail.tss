@@ -1,0 +1,326 @@
+".container":{
+	backgroundColor:"white",
+	navBarHidden: true,
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT],
+
+},
+//view Menu
+"#menu":{
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#333333",
+	left: 0,
+},
+//view wrapper conte el header i el footer
+"#main":{
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "#eaeaea",
+	left: 0,
+	layout: "vertical"
+},
+
+//header conte top actions
+"#header":{
+	backgroundImage:"/header.png",
+	width: Ti.UI.FILL,
+	height: "50dp",
+	top: 0, 
+	right: 0, 
+	left: 0,
+	layout:"horitzontal",
+	zIndex:11,
+},
+"#logo":{
+	image:"/logo.png",
+	width:'145dp',
+	left:'0dp',
+},
+"#slid":{
+	image:"/cerca.png",
+	height:'30dp',
+	right:'10dp',
+},
+"#int_header":{
+	width:'195dp',
+	left:'10dp',
+},
+"#int_header_slide":{
+	width:'50dp',
+	height:'50dp',
+	right:"0dp"
+},
+"#view":{
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+},
+"#cos":{
+	top:0,
+    left:0,
+    width:Ti.UI.FILL,
+    height:Ti.UI.FILL,
+    layout:'vertical',
+},
+"#textField2":{
+	borderRadius : '0sp',
+    borderWidth : '1px',
+    borderColor : '#bfebe8',
+	backgroundImage:"/field.jpg",
+	color : '#333333',
+    font : {
+        fontWeight : 'normal',
+        fontSize : '14sp',
+    },
+    layout : 'vertical',
+    focusedColor:'#288999',
+    focusable: false,
+},
+"#scrollView": {
+	backgroundColor:'#eaeaea',
+	layout:"vertical",
+	width:Ti.UI.FILL,
+	height:Ti.UI.FILL,
+	showVerticalScrollIndicator: true,
+	scrollType: "vertical"
+}
+"#footer":{
+	width: Ti.UI.FILL,
+	height: "50dp",
+	backgroundImage:"/back_footer.png",
+	bottom: 0, 
+	layout: "horizontal"
+},
+".text_menu":{
+	color: "#444444",
+	bottom:'5dp',
+	font: {fontSize: "9dp", fontFamily: "Roboto-Light"}
+}
+//View container, organitza en espai horitzontal
+".tbButton":{
+	width: "20%",
+},
+"#icone":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/menu.png"
+},
+"#icone1":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/user.png"
+},
+"#icone2":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/chat.png"
+},
+"#icone3":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/upload.png"
+},
+"#icone4":{
+	bottom:'15dp',
+	width: '30dp',
+	image: "/cerca.png"
+},
+"#con_foto":{
+	
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    height:Ti.UI.SIZE,
+},
+"#con_buton":{
+	top:'10dp',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    height:Ti.UI.SIZE,
+},
+"#con_texto":{
+	top:'10dp',
+	backgroundColor:'white',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    height:Ti.UI.SIZE,
+},
+
+"#con_buttonone":{
+	width:'150dp',
+    left:'0dp',
+    height:'52dp'
+    
+},
+"#con_buttontwo":{
+   right:'0dp',
+   width:'100dp',
+   height:'52dp'
+   
+},
+"#vull":{
+    width:'100dp',
+    height:'50dp',
+    backgroundColor:"#007aff",
+	borderWidth:1,
+	borderColor:'#007aff',
+	color : '#ffffff',
+	backgroundSelectedColor:"#ff8500",
+	font : {
+        fontWeight : 'normal',
+        fontSize : '16sp',
+    },
+},
+"#contra":{
+    width:'150dp',
+    height:'50dp',
+    backgroundColor:"#007aff",
+	borderWidth:1,
+	borderColor:'#007aff',
+	color : '#ffffff',
+	backgroundSelectedColor:"#ff8500",
+	font : {
+        fontWeight : 'normal',
+        fontSize : '16sp',
+    },
+},
+"#prod":{
+	top: '10dp',
+	image:"/prod.jpg",
+	width:Ti.UI.SIZE,
+	borderWidth:'10dp',
+	borderColor: 'white'
+},
+"#name":{
+	top:'10dp',
+   	left:'10dp',
+   	width:'220dp',
+   	height:Ti.UI.SIZE,
+   	color : '#666',
+   	font : {
+	    fontSize: "18dp", fontFamily: "RobotoCondensed-Bold",
+	},
+},
+"#price":{
+	top:'10dp',
+   right:'10dp',
+   width:'80dp',
+   height:Ti.UI.SIZE,
+   color : '#333',
+   textAlign: 'right',
+   font : {
+        fontFamily : "Roboto-Light",
+        fontSize : '18sp',
+    },
+},
+"#inText":{
+	top:'10dp',
+   left:'10dp',
+   width:Ti.UI.FILL,
+   height:Ti.UI.SIZE,
+   color : '#999',
+   font : {
+        fontSize : "14dp",
+        fontFamily : "Roboto-Light",
+	},
+},
+"#con_texto_sin":{
+	backgroundColor:'white',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    height:Ti.UI.SIZE,
+},
+"#fin":{
+	width:Ti.UI.FILL,
+    left:'0dp',
+    height:'192dp',
+    backgroundColor:'#eaeaea'
+},
+"#escroll":{
+	top:'0dp',
+	width:Ti.UI.SIZE,
+	height: '350dp',
+	keepScreenOn:'true',
+	scrollType: "horizontal"
+},
+"#distancia":{
+	width:'245dp',
+	right:'0dp',
+	zIndex:'10',
+	height:'90dp',
+	top:'50dp',
+	backgroundColor:"#333333"
+},
+"#slider_control":{
+	min:0,
+		max:10,
+		value:5,
+		width:'100dp',
+		height:'auto',
+		selectedThumbImage:'/slider_thumb.png',
+		highlightedThumbImage:'/chat.png'
+},
+"#con_map":{
+	top:'10dp',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    height:'200dp',
+     backgroundColor:'white'
+},
+"#mapview":{
+	top:'10dp',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+    bottom:'10dp'
+},
+"#rodona":{
+	backgroundImage:"/useralex.png",
+	width:'75dp',
+	height:'75dp',
+	left:'10dp',
+	top:'10dp'
+},
+"#user":{
+	image:"/rodona.png",
+	width:'75dp',
+	height:'75dp',
+	backgroundColor:'transparent',
+	left:'0dp',
+},
+"#con_user":{
+	left:'85dp',
+	layout:'vertical',
+	top:'5dp',
+	width:Ti.UI.FILL,
+	 height:Ti.UI.SIZE,
+},
+"#con_texto_user":{
+	top:'10dp',
+	backgroundColor:'white',
+    left:'10dp',
+    right:'10dp',
+    width:Ti.UI.FILL,
+   height:'95dp'
+},
+"#user_name":{
+	 left:'10dp',
+ 	color : '#80CFE8',
+   	font : {
+	    fontSize: "16dp", fontFamily: "RobotoCondensed-Bold",
+	},
+	height:'23dp'
+},
+".text_user":{
+	 left:'10dp',
+ 	 color : '#999',
+     font : {
+        fontSize : "14dp",
+        fontFamily : "Roboto-Light",
+	 },
+	 height:'17dp'
+} 

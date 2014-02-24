@@ -1,0 +1,101 @@
+<Alloy>
+	<Window class="container" >		
+		<View id="menu">
+					
+		</View>
+		
+		<View  id="mainContainer">
+		<View id="main">
+			<View id="header">
+				<View id="int_header">
+						<ImageView id="logo"></ImageView>
+				</View>
+				<View id="int_header_slide">
+						<ImageView id="slid"></ImageView>
+				</View>
+			</View>
+			
+		</View>
+		
+	<View top="50dp" height="100%" width="100%">
+	<ScrollView id="scrollView">
+		<View id="view">
+            	<View id="cos">
+     				
+	            		<View id="con_foto">
+	            	 			<ImageView id="prod"></ImageView>            	 		
+	 					</View>
+	 					
+	            
+ 					
+	 					<View id="con_buton">
+							<View id="con_buttonone">
+		            	 	<Button title="CONTRAOFERTA" id="contra" />        	 	
+		 					</View>
+		 					
+		 					<View id="con_buttontwo">
+		   	            	 	<Button title="EL VULL" id="vull" />
+		 					</View>
+	 					</View>
+	 					<View id="con_texto">
+	            	 		<Label id="name">Quesadilla de perro</Label>
+	            	 		<Label id="price">30 €</Label>
+	 					</View>
+	 					<View id="con_texto_sin">
+	            	 		<Label id="inText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum vulputate rutrum. \nProin auctor, nunc sed venenatis mollis, sapien ligula mattis ipsum.\n</Label>
+	 					</View>
+	 					<View id="con_map">
+	            	 		 <View id="mapview" ns="Ti.Map" onClick="doClick" onComplete="setRegion" animate="true" regionFit="true" userLocation="true" mapType="Ti.Map.STANDARD_TYPE" >
+				             <Annotation id="mountainView"
+				              latitude="37.390749" longitude="-122.081651"
+				              title="Appcelerator Headquarters" subtitle="Mountain View, CA"
+				              pinImage="/pin.png"
+				              leftButton="/images/appcelerator_small.png"
+				              myid="1"/>
+							</View>
+	 					</View>
+	 					<View id="con_texto_user">
+	 						<View id="rodona">
+	 							<ImageView id="user"></ImageView>
+	 						</View>
+	 						<View id="con_user">
+		 						<Label id="user_name">Alex Alemany</Label>
+		            	 		<Label class="text_user">30 Productos</Label>
+		            	 		<Label class="text_user">5 ventas</Label>
+		            	 		<Label class="text_user">Ver productos</Label>
+	            	 		</View>
+	 					</View>
+	 					<View id="fin">
+	            	 	
+	 					</View>
+	 				
+ 				</View>           
+            </View>
+	</ScrollView>
+	</View>
+	<View id="footer">
+				
+				<View class="tbButton">
+					<ImageView id="icone" ></ImageView>
+					<Label class="text_menu">Menu</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone1" ></ImageView>
+					<Label class="text_menu">Conta</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone2"></ImageView>
+					<Label class="text_menu">Chat</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone3"></ImageView>
+					<Label class="text_menu">Vendre</Label>
+				</View>
+				<View  class="tbButton">
+					<ImageView id="icone4" ></ImageView>
+					<Label class="text_menu">Cerca</Label>
+				</View>
+			</View>
+	</View>
+	</Window>
+</Alloy>
