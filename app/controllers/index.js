@@ -1,7 +1,8 @@
 Ti.include("/js/md5.js");
 Ti.include("/js/principal.js");
 Ti.include("/js/server.js");
-server._init("www.alexmanydev.com/AppStore");
+var ipConnections="www.alexmanydev.com/AppStore";
+server._init(ipConnections);
 //server._init("192.168.1.65:8080/AppStore");
 
 $.content_anim.setVisible(false);
@@ -76,10 +77,12 @@ var indexWindow = {
         }).getView();
         win.open();
     },
-     openDetailAnunci : function() {
+     openDetailAnunci : function(id) {
         var win = Alloy.createController('detail', {
             parent : $,
-            map : mapview
+            idAnunci : id,
+            map : mapview,
+            ipConnections : ipConnections
         }).getView();
         win.open();
     },
@@ -207,10 +210,10 @@ var indexWindow = {
         var intImage = 0, intImages = json.length;
 
         indexWindow._removeLastRow();
-
         for ( intImage = 0; intImage < intImages; intImage = intImage + 1) {
             //Crea elements i els hi donem estil
             var row = Ti.UI.createTableViewRow({
+                id : json[intImage].id,
                 height : "107dp",
                 selectionStyle : "NONE",
                 className : "listRow",
@@ -339,9 +342,9 @@ var indexWindow = {
             row.add(viewRow);
             row.add(grayLine);
             indexWindow.numAnuncis++;
-            
+ 
             row.addEventListener('click', function(e){
-                indexWindow.openDetailAnunci();
+                indexWindow.openDetailAnunci(e.rowData.id);
             });
             
             $.mainList.appendRow(row);
@@ -541,8 +544,8 @@ Titanium.Geolocation.addEventListener('location', function() {
 });
 
 //Inicialitzem el server i el controlador de la pantalla
-indexWindow._init("www.alexmanydev.com/AppStore");
-//indexWindow._init("192.168.1.65:8080/AppStore");
+indexWindow._init(ipConnections);
+
 //Accions amb la base de dates
 utilsDB._init($, mapview, indexWindow);
 
