@@ -76,6 +76,13 @@ var indexWindow = {
         }).getView();
         win.open();
     },
+     openDetailAnunci : function() {
+        var win = Alloy.createController('detail', {
+            parent : $,
+            map : mapview
+        }).getView();
+        win.open();
+    },
     getAnuncis : function() {
         TiLoad.show();
         Titanium.Geolocation.getCurrentPosition(function(e) {
@@ -332,7 +339,11 @@ var indexWindow = {
             row.add(viewRow);
             row.add(grayLine);
             indexWindow.numAnuncis++;
-
+            
+            row.addEventListener('click', function(e){
+                indexWindow.openDetailAnunci();
+            });
+            
             $.mainList.appendRow(row);
         }
         indexWindow._setLastRow();

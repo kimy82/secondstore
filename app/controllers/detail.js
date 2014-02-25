@@ -1,3 +1,6 @@
+var args = arguments[0] || {};
+var parent = args.parent;
+var map = args.map;
 
 function doClick(evt){
     Ti.API.info("Annotation " + evt.title + " clicked, id: " + evt.annotation.myid);
@@ -24,4 +27,4 @@ function setRegion(evt) {
 $.mapview.annotations = [$.mountainView];
 $.mapview.region = {latitude:37.390749, longitude:-122.081651, latitudeDelta:0.01, longitudeDelta:0.01};
 
-$.index.open();
+$.detail.open();
