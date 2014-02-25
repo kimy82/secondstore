@@ -7,10 +7,10 @@
                         <ImageView id="logo"></ImageView>
                     </View>
                     <View class="container">
-                        <TextField hintText="USUARI" id="textField2"/>
+                        <TextField hintText="USUARI" id="textFieldEmail"/>
                     </View>
                     <View class="container">
-                        <TextField passwordMask="true" hintText="PASSWORD" id="textField2"/>
+                        <TextField passwordMask="true" hintText="PASSWORD" id="textFieldPassword"/>
                     </View>
                     <View class="container">
                         <Button id="button" title="LOGIN"/>

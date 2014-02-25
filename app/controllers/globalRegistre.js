@@ -18,4 +18,12 @@ $.buttonNew.addEventListener('click', function(e) {
 $.face.addEventListener('click', function(e) {
    fb.authorize();
 });
+
+//Button login
+$.button.addEventListener('click', function(e){
+    var  pass = $.textFieldPassword.value;
+    var email = $.textFieldEmail.value;
+    
+    server.login(email,pass,indexWindow.to);
+});
 $.globalRegistre.open(); 

@@ -8,7 +8,9 @@ $.content_anim.setVisible(false);
 
 //Loading screen
 Ti.include("/js/TiLoading.js");
-TiLoad.init({ rotate: false });
+TiLoad.init({
+    rotate : false
+});
 
 //Butoon de logout
 var buttonLogout = Titanium.UI.createButton({
@@ -37,13 +39,14 @@ var indexWindow = {
         indexWindow.initSearch = 0;
         indexWindow.numAnuncis = 0;
         indexWindow.searching = false;
-        indexWindow.distancia=3;
+        indexWindow.distancia = 3;
         indexWindow._controlNetwork('true');
+        indexWindow.to = "";
     },
     init : 0,
     _controlNetwork : function(check) {
         //Si hi ha internet carreguem la pantall i si no carreguem una pantalla d'avis'
-        if (check=='true' && isNetwork()) {
+        if (check == 'true' && isNetwork()) {
             $.index.open();
         } else {
             var win = Alloy.createController('noInternet').getView();
@@ -66,15 +69,22 @@ var indexWindow = {
         }).getView();
         win.open();
     },
+    openAddAnunci : function() {
+        var win = Alloy.createController('addAnunci', {
+            parent : $,
+            map : mapview
+        }).getView();
+        win.open();
+    },
     getAnuncis : function() {
         TiLoad.show();
         Titanium.Geolocation.getCurrentPosition(function(e) {
-            if(!e.success){
-                
-            }else{
+            if (!e.success) {
+
+            } else {
                 latitude = e.coords.latitude;
                 longitude = e.coords.longitude;
-                
+
             }
             var url = "http://" + indexWindow.ip + "/rest/service/userService/getAnuncis?init=" + indexWindow.init + "&lat=" + latitude + "&lon=" + longitude;
             var client = Ti.Network.createHTTPClient({
@@ -378,10 +388,10 @@ var indexWindow = {
             client.send();
         });
     },
-    updateDistance : function(e){
-         var distancia = parseInt(e.value);
-         indexWindow.distancia = distancia;
-         $.dis_km.setText("Mostrant anuncis a: "+distancia+" Km");
+    updateDistance : function(e) {
+        var distancia = parseInt(e.value);
+        indexWindow.distancia = distancia;
+        $.dis_km.setText("Mostrant anuncis a: " + distancia + " Km");
     },
     getMapView : function() {
         return Titanium.Map.createView({
@@ -503,7 +513,6 @@ var indexWindow = {
 };
 
 var content_animOpen = false;
-
 
 server.setParent(indexWindow);
 //Params per la geolocalitzacio

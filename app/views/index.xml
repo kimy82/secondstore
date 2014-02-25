@@ -63,28 +63,28 @@
 						Menu
 					</Label>
 				</View>
-				<View  class="tbButton">
+				<View  class="tbButton" id="icone1view" >
 					<ImageView id="icone1">
 					</ImageView>
 					<Label class="text_menu">
 						Conta
 					</Label>
 				</View>
-				<View  class="tbButton">
+				<View  class="tbButton" id="icone2view" >
 					<ImageView id="icone2">
 					</ImageView>
 					<Label class="text_menu">
 						Chat
 					</Label>
 				</View>
-				<View  class="tbButton">
+				<View  class="tbButton" id="icone3view">
 					<ImageView id="icone3" >
 					</ImageView>
 					<Label class="text_menu">
 						Vendre
 					</Label>
 				</View>
-				<View  class="tbButton">
+				<View  class="tbButton" id="icone4view">
 					<ImageView id="icone4" >
 					</ImageView>
 					<Label class="text_menu">

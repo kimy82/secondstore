@@ -87,38 +87,42 @@ utilsDB = {
     configureIndex : function() {
         var userInDB = _executionsDB.getUser();
         if (userInDB.id != "") {
-            utilsDB.wind.icone3.removeEventListener('click',utilsDB.indexWindow.openGlobalRegistre);
-            utilsDB.wind.icone3.addEventListener('click', function(e) {
-                var win = Alloy.createController('addAnunci', {
-                    parent : utilsDB.wind,
-                    map : utilsDB.map
-                }).getView();
-                win.open();
-            });
+            utilsDB.wind.icone3view.removeEventListener('click',utilsDB.indexWindow.openGlobalRegistre);
+            utilsDB.wind.icone3view.removeEventListener('click',utilsDB.setToIcone3);
+            utilsDB.wind.icone3view.addEventListener('click', 
+               utilsDB.indexWindow.openAddAnunci
+            );
         } else {
-            utilsDB.wind.icone3.addEventListener('click', 
+            utilsDB.wind.icone3view.addEventListener('click', 
                 utilsDB.indexWindow.openGlobalRegistre
             );
-            utilsDB.wind.icone1.addEventListener('click', 
-                utilsDB.indexWindow.openCreateAccount
+            
+            utilsDB.wind.icone3view.addEventListener('click', 
+                utilsDB.setToIcone3
             );
-            utilsDB.wind.icone2.addEventListener('click',
-                utilsDB.indexWindow.openCreateAccount
+            utilsDB.wind.icone1view.addEventListener('click', 
+                utilsDB.indexWindow.openGlobalRegistre
+            );
+            utilsDB.wind.icone1view.addEventListener('click', 
+                utilsDB.setToIcone1
+            );
+            utilsDB.wind.icone2view.addEventListener('click',
+                utilsDB.indexWindow.openGlobalRegistre
+            );
+            utilsDB.wind.icone2view.addEventListener('click', 
+                utilsDB.setToIcone2
             );
         }
     },
-    unRegisterAllEventListeners: function(obj) {
-            if ( typeof obj._eventListeners == 'undefined' || obj._eventListeners.length == 0 ) {
-                return; 
-            }
-            
-            for(var i = 0, len = obj._eventListeners.length; i < len; i++) {
-                var e = obj._eventListeners[i];
-                obj.removeEventListener(e.event, e.callback);
-            }
-         
-            obj._eventListeners = [];
-},
+    setToIcone3 : function(){
+        utilsDB.indexWindow.to="icone3";
+    },
+      setToIcone2 : function(){
+        utilsDB.indexWindow.to="icone2";
+    },
+      setToIcone1 : function(){
+        utilsDB.indexWindow.to="icone1";
+    },
 };
 
 var geo = {
